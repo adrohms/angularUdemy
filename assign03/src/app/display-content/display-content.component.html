@@ -1,0 +1,19 @@
+<div
+    [ngClass]="getClass()" class="alert" role="alert">
+   {{ clickStatus }}
+</div>
+
+<button [disabled]="!allowNewContent" (click)="onClicking()" class="btn btn-primary" type="button">Display Details</button>
+
+<div class="align-items-center col-6">
+  <div
+    *ngFor="let content of contentList"
+    [ngStyle]="{backgroundColor: content >= 5 ? 'blue' : 'transparent'}"
+    [ngClass]="{'whiteColor': content >= 5}">
+
+    <p> Click count: {{ content }} </p>
+
+  </div>
+</div>
+
+
